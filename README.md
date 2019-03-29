@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Routing: able to break the application into smaller pieces && Helpers: extention methods addes to the request and response objects
+
 - [ ] Describe Middleware?
+
+Basically an array of functions. Can get get the res. and req. and operate on them. The function can return the response or call the next middleware.
 
 - [ ] Describe a Resource?
 
+Anything can be a resource. 
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+The API can return a sucess status of 200 with a json message of the developers' choice
+
 - [ ] How can we partition our application into sub-applications?
+
+Routing and Helpers
 
 ## Project Setup
 
