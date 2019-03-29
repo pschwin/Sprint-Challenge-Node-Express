@@ -71,5 +71,19 @@ router.put('/:id', async(req, res) =>{
     }
 })
 
+//Get Project Actions
+router.get('/actions/:id', async(req,res) =>{
+    try{
+        const response = await projectDB.getProjectActions(req.params.id)
+        if(response && response.length > 0){
+            res.status(200).json(response)
+        }else{
+            res.status(404).json({message: 'No actions for this project'})
+        }
+    }catch(error){
+        res.status(500).json({errorMessage: `Error retrieving actions for the project`})
+    }
+})
+
 
 module.exports = router;
