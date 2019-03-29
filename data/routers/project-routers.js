@@ -71,7 +71,7 @@ router.put('/:id', async(req, res) =>{
     }
 })
 
-//Get Project Actions
+//Get Project Actions //Sub-Route
 router.get('/actions/:id', async(req,res) =>{
     try{
         const response = await projectDB.getProjectActions(req.params.id)
