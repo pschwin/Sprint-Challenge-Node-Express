@@ -1,10 +1,10 @@
 const express = require ('express');
-const projectDB = require ('../helpers/projectModel');
+const projectDB = require ('../../data/helpers/projectModel');
 const router = express.Router();
 
 router.get('/', async (req, res) =>{
     try{
-        const projects = await projectDB.get(req.query);
+        const projects = await projectDB.get(req.params.query);
         res.status(200).json(projects);
     }catch(error){
         console.log(error);

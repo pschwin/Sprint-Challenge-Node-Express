@@ -1,10 +1,10 @@
 const express = require ('express');
-const actionDB = require ('../helpers/actionModel.js');
+const actionDB = require ('../../data/helpers/actionModel.js');
 const router = express.Router();
 
 router.get('/', async (req, res) =>{
     try{
-        const actions = await actionDB.get(req.query);
+        const actions = await actionDB.get(req.params.query);
         res.status(200).json(actions);
     }catch(error){
         console.log(error);
