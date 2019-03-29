@@ -1,5 +1,5 @@
 const express = require ('express');
-const projectDB = require ('../../data/helpers/projectModel');
+const projectDB = require ('../helpers/projectModel');
 const router = express.Router();
 
 router.get('/', async (req, res) =>{
@@ -39,7 +39,7 @@ router.post('/', async (req, res) =>{
     }
 })
 
-router.delete('/"id', async(req, res) =>{
+router.delete('/:id', async(req, res) =>{
     try{
         const count = await projectDB.remove(req.params.id);
         if (count > 0){

@@ -1,5 +1,5 @@
 const express = require ('express');
-const actionDB = require ('../../data/helpers/actionModel.js');
+const actionDB = require ('../helpers/actionModel.js');
 const router = express.Router();
 
 router.get('/', async (req, res) =>{
@@ -45,7 +45,7 @@ router.post('/', async (req, res) =>{
     }
 })
 
-router.delete('/"id', async(req, res) =>{
+router.delete('/:id', async(req, res) =>{
     try{
         const count = await actionDB.remove(req.params.id);
         if (count > 0){
